@@ -1,19 +1,19 @@
 (function (window, document) {
 
-  const slides = document.querySelectorAll(".slides");
-  const btnRight = document.querySelector(".slider__btn--right");
-  const btnLeft = document.querySelector(".slider__btn--left");
+  var slides = document.querySelectorAll(".slides");
+  var btnRight = document.querySelector(".slider__btn--right");
+  var btnLeft = document.querySelector(".slider__btn--left");
 
   let curSlide = 0;
-  const maxSlide = slides.length;
-  const goToSlide = (slide) => {
+  var maxSlide = slides.length;
+  var goToSlide = (slide) => {
     slides.forEach((s, i) => {
-      s.style.transform = `translateX(${100 * (i - slide)}%)`;
+      s.style.transform = 'translateX(' + 100 * (i - slide) + '%)';
     });
   };
   goToSlide(0);
 
-  const nextSlide = () => {
+  var nextSlide = () => {
     if (curSlide === maxSlide - 1) {
       curSlide = 0;
     } else {
@@ -22,7 +22,7 @@
     goToSlide(curSlide);
   };
 
-  const prevSlide = () => {
+  var prevSlide = () => {
     if (curSlide === 0) {
       curSlide = maxSlide - 1;
     } else {
