@@ -1,3 +1,4 @@
+(function (window, document) {
 const tabsContainer = document.querySelector('.vorteile__tab-container');
 const tabs = document.querySelectorAll('.vorteile__tab');
 const tabsContent = document.querySelectorAll('.vorteile__content');
@@ -103,7 +104,7 @@ const sliderSk = function () {
     }
   });
 };
-sliderSk();
+sliderSk(); 
 
 
 
@@ -132,3 +133,5 @@ sliderSk();
 
 
 
+
+})(window, document);
