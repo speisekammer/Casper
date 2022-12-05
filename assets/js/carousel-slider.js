@@ -7,18 +7,18 @@ const tabsContent = document.querySelectorAll('.vorteile__content');
 tabsContainer.addEventListener('click', function (e) {
   const clicked = e.target.closest('.vorteile__tab');
 
- 
+
   if (!clicked) return;
 
-  
+
   tabs.forEach(t => t.classList.remove('vorteile__tab--active'));
   tabsContent.forEach(c => c.classList.remove('vorteile__content--active'));
 
- 
+
   clicked.classList.add('vorteile__tab--active');
 
- 
-  document.querySelector(`.vorteile__content--${clicked.dataset.tab}`).classList.add('vorteile__content--active');
+
+  document.querySelector('.vorteile__content--'+ clicked.dataset.tab).classList.add('vorteile__content--active');
 });
 
 //carousel
@@ -36,7 +36,7 @@ const sliderSk = function () {
     slides.forEach(function (_, i) {
       dotContainer.insertAdjacentHTML(
         'beforeend',
-        `<button class="dots_sk__dot" data-slide="${i}"></button>`
+        '<button class="dots_sk__dot" data-slide="' + i + '></button>'
       );
     });
   };
@@ -47,13 +47,13 @@ const sliderSk = function () {
       .forEach(dot => dot.classList.remove('dots_sk__dot--active'));
 
     document
-      .querySelector(`.dots_sk__dot[data-slide="${slide}"]`)
+      .querySelector('.dots_sk__dot[data-slide="' + slide + '"]')
       .classList.add('dots_sk__dot--active');
   };
 
   const goToSlide = function (slide) {
     slides.forEach(
-      (s, i) => (s.style.transform = `translateX(${100 * (i - slide)}%)`)
+      (s, i) => (s.style.transform = 'translateX(' + (100 * (i - slide)) + '%)')
     );
   };
 
@@ -104,34 +104,7 @@ const sliderSk = function () {
     }
   });
 };
-sliderSk(); 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+sliderSk();
 
 })(window, document);
