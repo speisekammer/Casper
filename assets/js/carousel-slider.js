@@ -1,25 +1,4 @@
 (function (window, document) {
-const tabsContainer = document.querySelector('.vorteile__tab-container');
-const tabs = document.querySelectorAll('.vorteile__tab');
-const tabsContent = document.querySelectorAll('.vorteile__content');
-
-
-tabsContainer.addEventListener('click', function (e) {
-  const clicked = e.target.closest('.vorteile__tab');
-
-
-  if (!clicked) return;
-
-
-  tabs.forEach(t => t.classList.remove('vorteile__tab--active'));
-  tabsContent.forEach(c => c.classList.remove('vorteile__content--active'));
-
-
-  clicked.classList.add('vorteile__tab--active');
-
-
-  document.querySelector('.vorteile__content--'+ clicked.dataset.tab).classList.add('vorteile__content--active');
-});
 
 //carousel
 const sliderSk = function () {
@@ -85,6 +64,7 @@ const sliderSk = function () {
 
     activateDot(0);
   };
+  
   init();
 
   // Event handlers
