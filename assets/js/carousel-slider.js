@@ -64,6 +64,7 @@ const sliderSk = function () {
 
     activateDot(0);
   };
+  
   init();
 
   // Event handlers
