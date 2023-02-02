@@ -1,3 +1,4 @@
+(function (window, document) {
 const result1 = document.querySelector(".result1");
 const result2 = document.querySelector(".result2");
 const result3 = document.querySelector(".result3");
@@ -29,4 +30,4 @@ function getNumber() {
 }
 function showResultDiv() {
 checklisteResult.style.display='block';
-} 
+} })(window, document);
