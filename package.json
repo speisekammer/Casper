@@ -113,16 +113,6 @@
                 "default": true,
                 "group": "homepage"
             },
-            "header_style": {
-                "type": "select",
-                "options": [
-                    "Center aligned",
-                    "Left aligned",
-                    "Hidden"
-                ],
-                "default": "Center aligned",
-                "group": "homepage"
-            },
             "show_logo_in_navigation": {
                 "type": "boolean",
                 "default": false,
