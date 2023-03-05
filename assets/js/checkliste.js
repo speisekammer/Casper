@@ -1,10 +1,8 @@
-(function (window, document) {
-const result1 = document.querySelector(".result1");
-const result2 = document.querySelector(".result2");
-const result3 = document.querySelector(".result3");
-const ergebnisBtn = document.getElementById("ergebnis-btn");
-const checklisteResult = document.querySelector(".checkliste-result");
+
 function getNumber() {
+  const result1 = document.querySelector(".result1");
+  const result2 = document.querySelector(".result2");
+  const result3 = document.querySelector(".result3");
   let counter = 0;
   const checkboxes = document.querySelectorAll(".checkliste-wrapper input");
   checkboxes.forEach((checkbox) => {
@@ -29,5 +27,6 @@ function getNumber() {
   }
 }
 function showResultDiv() {
+const checklisteResult = document.querySelector(".checkliste-result");
 checklisteResult.style.display='block';
-} })(window, document);
+} 
