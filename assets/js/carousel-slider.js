@@ -5,13 +5,16 @@ const sliderSk = function () {
   const slides = document.querySelectorAll('.slide_sk');
   const btnLeft = document.querySelector('.slider__btn--left');
   const btnRight = document.querySelector('.slider__btn--right');
-  const dotContainer = document.querySelector('.dots_sk');
-
+  //const dotContainer = document.querySelector('.dots_sk');
+  // get out of function when there is no carousel on page
+  if (!slides) {
+    return;
+  }
   let curSlide = 0;
   const maxSlide = slides.length;
 
   // Functions
-  const createDots = function () {
+ /* const createDots = function () {
     slides.forEach(function (_, i) {
       dotContainer.insertAdjacentHTML(
         'beforeend',
@@ -28,7 +31,7 @@ const sliderSk = function () {
     document
       .querySelector('.dots_sk__dot[data-slide="' + slide + '"]')
       .classList.add('dots_sk__dot--active');
-  };
+  };*/
 
   const goToSlide = function (slide) {
     slides.forEach(
@@ -45,7 +48,7 @@ const sliderSk = function () {
     }
 
     goToSlide(curSlide);
-    activateDot(curSlide);
+   // activateDot(curSlide);
   };
 
   const prevSlide = function () {
@@ -55,15 +58,16 @@ const sliderSk = function () {
       curSlide--;
     }
     goToSlide(curSlide);
-    activateDot(curSlide);
+    //activateDot(curSlide);
   };
 
   const init = function () {
     goToSlide(0);
-    createDots();
+    //createDots();
 
-    activateDot(0);
+   // activateDot(0);
   };
+  
   init();
 
   // Event handlers
@@ -75,13 +79,13 @@ const sliderSk = function () {
     e.key === 'ArrowRight' && nextSlide();
   });
 
-  dotContainer.addEventListener('click', function (e) {
+ /* dotContainer.addEventListener('click', function (e) {
     if (e.target.classList.contains('dots_sk__dot')) {
       const { slide } = e.target.dataset;
       goToSlide(slide);
       activateDot(slide);
     }
-  });
+  });*/
 };
 
 sliderSk();
